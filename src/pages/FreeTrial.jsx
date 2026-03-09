@@ -48,43 +48,45 @@ const FreeTrial = () => {
   const handleSend = async () => {
     setIsSending(true);
 
-    // ==========================================
-    // 【重要】メールを自動送信するための実装について
-    // ==========================================
-    // フロントエンド（React）だけではメール自動送信ができないため、
-    // Formspree (https://formspree.io/) や Web3Forms (https://web3forms.com/) のような
-    // 無料のフォーム用APIサービスを活用するのが一般的・簡単です。
-
-    // ▼ 実装例 (Web3FormsやFormspreeを利用する場合) ▼
-    /*
     try {
-      const response = await fetch("YOUR_FORM_ENDPOINT_URL_HERE", {
+      // .envファイルなどに設定したAPI GatewayのエンドポイントURLを取得
+      // 注意: API GatewayのURLが未設定の場合は、動作確認用として送信成功にします。
+      const apiUrl = import.meta.env.VITE_API_ENDPOINT;
+
+      if (!apiUrl || apiUrl.includes('your-api-gateway-url')) {
+        // デモ用の処理（エンドポイントが設定されるまでの間）
+        console.warn('API Endpoint is not configured. Simulating success delay.');
+        setTimeout(() => {
+          setIsSending(false);
+          setIsSuccess(true);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 1000);
+        return;
+      }
+
+      const response = await fetch(apiUrl, {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        // Web3Formsの場合は { access_key: "...", ...formData } のように含めます
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
         body: JSON.stringify(formData),
       });
+
       const result = await response.json();
+
       if (result.success || response.ok) {
         setIsSuccess(true);
       } else {
-        throw new Error("API Error");
+        throw new Error(result.message || "API Error");
       }
     } catch (error) {
-      console.error(error);
-      alert('送信に失敗しました。');
+      console.error('送信エラー:', error);
+      alert('送信に失敗しました。時間をおいて再度お試しください。');
     } finally {
       setIsSending(false);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    */
-
-    // 今回は挙動確認用として、1秒待機したあとに完了画面へ遷移する擬似処理を入れています。
-    setTimeout(() => {
-      setIsSending(false);
-      setIsSuccess(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 1000);
   };
 
   return (
