@@ -9,18 +9,17 @@ const SOURCE_EMAIL = "no-reply@oto-moni.com";
 const DESTINATION_EMAIL = "is0632vv@ed.ritsumei.ac.jp";
 
 export const handler = async (event) => {
-    // CORS対応のヘッダー
-    const headers = {
-        "Access-Control-Allow-Origin": "https://ses.d1ulymfmax3wmb.amplifyapp.com",
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "OPTIONS,POST"
-    };
+    // CORS対応のヘッダーは直接各レスポンスで返します
 
     // OPTIONSリクエスト（プリフライト）の処理
     if (event.requestContext?.http?.method === "OPTIONS" || event.httpMethod === "OPTIONS") {
         return {
             statusCode: 200,
-            headers,
+            headers: {
+                "Access-Control-Allow-Origin": "https://ses.d1ulymfmax3wmb.amplifyapp.com",
+                "Access-Control-Allow-Headers": "Content-Type",
+                "Access-Control-Allow-Methods": "OPTIONS,POST"
+            },
             body: JSON.stringify({ message: "CORS preflight successful" }),
         };
     }
@@ -84,7 +83,11 @@ ${message || '特になし'}
 
         return {
             statusCode: 200,
-            headers,
+            headers: {
+                "Access-Control-Allow-Origin": "https://ses.d1ulymfmax3wmb.amplifyapp.com",
+                "Access-Control-Allow-Headers": "Content-Type",
+                "Access-Control-Allow-Methods": "OPTIONS,POST"
+            },
             body: JSON.stringify({
                 success: true,
                 message: "Email sent successfully",
@@ -94,7 +97,11 @@ ${message || '特になし'}
         console.error("Error sending email:", error);
         return {
             statusCode: 500,
-            headers,
+            headers: {
+                "Access-Control-Allow-Origin": "https://ses.d1ulymfmax3wmb.amplifyapp.com",
+                "Access-Control-Allow-Headers": "Content-Type",
+                "Access-Control-Allow-Methods": "OPTIONS,POST"
+            },
             body: JSON.stringify({
                 success: false,
                 message: "Failed to send email",
