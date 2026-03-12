@@ -11,7 +11,7 @@ const DESTINATION_EMAIL = "is0632vv@ed.ritsumei.ac.jp";
 export const handler = async (event) => {
     // CORS対応のヘッダー
     const headers = {
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "https://ses.d1ulymfmax3wmb.amplifyapp.com",
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Methods": "OPTIONS,POST"
     };
