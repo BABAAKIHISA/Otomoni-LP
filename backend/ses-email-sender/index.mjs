@@ -4,7 +4,7 @@ import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 const sesClient = new SESClient({ region: "ap-southeast-2" });
 
 // 送信元メールアドレス（SES検証済みである必要があります）
-const SOURCE_EMAIL = "oto-moni.com";
+const SOURCE_EMAIL = "no-reply@oto-moni.com";
 // 送信先メールアドレス（管理者のアドレスなどを指定）
 const DESTINATION_EMAIL = "is0632vv@ed.ritsumei.ac.jp";
 
