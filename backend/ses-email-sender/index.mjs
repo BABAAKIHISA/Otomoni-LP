@@ -9,24 +9,47 @@ const SOURCE_EMAIL = "no-reply@oto-moni.com";
 const DESTINATION_EMAIL = "is0632vv@ed.ritsumei.ac.jp";
 
 export const handler = async (event) => {
-    // CORS対応のヘッダーは直接各レスポンスで返します
+    console.log("=== LAMBDA FUNCTION INVOKED ===");
+    console.log("Raw Event:", JSON.stringify(event, null, 2));
+
+    // 全てのレスポンスに付与する共通のCORSヘッダー
+    const corsHeaders = {
+        "Access-Control-Allow-Origin": "https://ses.d1ulymfmax3wmb.amplifyapp.com",
+        "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
+        "Access-Control-Allow-Methods": "OPTIONS,POST",
+        "Access-Control-Allow-Credentials": "true"
+    };
 
     // OPTIONSリクエスト（プリフライト）の処理
     if (event.requestContext?.http?.method === "OPTIONS" || event.httpMethod === "OPTIONS") {
+        console.log("Received OPTIONS request. Returning preflight success.");
         return {
             statusCode: 200,
-            headers: {
-                "Access-Control-Allow-Origin": "https://ses.d1ulymfmax3wmb.amplifyapp.com",
-                "Access-Control-Allow-Headers": "Content-Type",
-                "Access-Control-Allow-Methods": "OPTIONS,POST"
-            },
+            headers: corsHeaders,
             body: JSON.stringify({ message: "CORS preflight successful" }),
         };
     }
 
     try {
+        console.log("Processing POST request...");
         // API Gateway から渡されるボディをパース
-        const body = event.body ? JSON.parse(event.body) : event;
+        let body;
+        if (event.body) {
+            console.log("event.body exists. Parsing JSON...");
+            // Base64エンコードされているかチェック (REST APIでありがち)
+            if (event.isBase64Encoded) {
+                 console.log("Decoding base64 body...");
+                 const decodedBody = Buffer.from(event.body, 'base64').toString('utf8');
+                 body = JSON.parse(decodedBody);
+            } else {
+                 body = JSON.parse(event.body);
+            }
+        } else {
+            console.log("No event.body. Using raw event as body (could be direct invocation).");
+            body = event;
+        }
+
+        console.log("Parsed Body:", JSON.stringify(body, null, 2));
 
         // フォームデータから必要な情報を抽出
         const {
@@ -40,6 +63,8 @@ export const handler = async (event) => {
             machinefeature,
             interest,
         } = body;
+
+        console.log(`Extracted name: ${name}, company: ${company}, email: ${email}`);
 
         // メール本文の作成
         const emailBody = `
@@ -60,6 +85,8 @@ export const handler = async (event) => {
 ${message || '特になし'}
 `;
 
+        console.log("Email body created. Preparing SendEmailCommand...");
+
         const sendEmailCommand = new SendEmailCommand({
             Source: SOURCE_EMAIL,
             Destination: {
@@ -79,33 +106,32 @@ ${message || '特になし'}
             },
         });
 
-        await sesClient.send(sendEmailCommand);
+        console.log("Calling SES sesClient.send()...");
+        const sesResult = await sesClient.send(sendEmailCommand);
+        console.log("SES Send Success. MessageId:", sesResult.MessageId);
 
+        console.log("Returning 200 Success response.");
         return {
             statusCode: 200,
-            headers: {
-                "Access-Control-Allow-Origin": "https://ses.d1ulymfmax3wmb.amplifyapp.com",
-                "Access-Control-Allow-Headers": "Content-Type",
-                "Access-Control-Allow-Methods": "OPTIONS,POST"
-            },
+            headers: corsHeaders,
             body: JSON.stringify({
                 success: true,
                 message: "Email sent successfully",
+                messageId: sesResult.MessageId
             }),
         };
     } catch (error) {
+        console.error("=== ERROR OCCURRED ===");
         console.error("Error sending email:", error);
+        
         return {
             statusCode: 500,
-            headers: {
-                "Access-Control-Allow-Origin": "https://ses.d1ulymfmax3wmb.amplifyapp.com",
-                "Access-Control-Allow-Headers": "Content-Type",
-                "Access-Control-Allow-Methods": "OPTIONS,POST"
-            },
+            headers: corsHeaders,
             body: JSON.stringify({
                 success: false,
                 message: "Failed to send email",
                 error: error.message,
+                stack: error.stack
             }),
         };
     }
