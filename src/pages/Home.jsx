@@ -344,22 +344,20 @@ const ClosingSection = () => {
           <h2 className="font-japanese text-3xl sm:text-4xl font-medium tracking-tight text-gray-900">
             無料トライアル、お問い合わせ
           </h2>
-          <p className="font-japanese mt-4 text-base sm:text-lg text-gray-600">
+          <p className="font-japanese mt-4 mb-4 text-base sm:text-lg text-gray-600">
             無料トライアルをご用意しております。<br />
-            料金は一切かかりません。また、トライアル終了後にご利用を強制することもありません。<br />
+            料金は一切かかりません。トライアル終了後にご利用を強制することもありません。<br />
             <Link to="/FreeTrial">
-              <Button className="font-japanese bg-orange-500 text-white hover:bg-orange-600 rounded-full px-8 py-6 text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+              <Button className="font-japanese mt-4 mb-4 bg-orange-500 text-white hover:bg-orange-600 rounded-full px-8 py-6 text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                 無料トライアルはこちら
-                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </p>
           <p className="font-japanese mt-4 text-base sm:text-lg text-gray-600">
             その他、ご不明な点などございましたら、お気軽にお問い合わせください。<br />
             <Link to="/contact">
-              <Button className="font-japanese bg-orange-500 text-white hover:bg-orange-600 rounded-full px-8 py-6 text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+              <Button className="font-japanese mt-4 bg-gray-500 text-white hover:bg-gray-600 rounded-full px-8 py-6 text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                 お問い合わせはこちら
-                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </p>
@@ -437,9 +435,8 @@ const FaqSection = () => {
           className="mt-12 text-center"
         >
           <Link to="/Faq">
-            <Button className="font-japanese bg-orange-500 text-white hover:bg-orange-600 rounded-full px-8 py-6 sm:px-10 sm:py-7 text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+            <Button className="font-japanese bg-gray-500 text-white hover:bg-gray-600 rounded-full px-8 py-6 sm:px-10 sm:py-7 text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
               その他ご質問はこちら
-              <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
         </motion.div>

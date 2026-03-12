@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import Home from '@/pages/Home';
-import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import ProductDetailPage from '@/pages/ProductDetailPage';
 import Success from '@/pages/Success';
@@ -27,7 +26,6 @@ function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/Faq" element={<Faq />} />
           <Route path="/FreeTrial" element={<FreeTrial />} />

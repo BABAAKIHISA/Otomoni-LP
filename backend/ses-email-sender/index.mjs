@@ -1,12 +1,12 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 
-// リージョンはご自身の環境に合わせて変更してください (例: ap-northeast-1)
+// リージョンはご自身の環境に合わせて変更してください 
 const sesClient = new SESClient({ region: "ap-southeast-2" });
 
 // 送信元メールアドレス（SES検証済みである必要があります）
-const SOURCE_EMAIL = "[EMAIL_ADDRESS]";
+const SOURCE_EMAIL = "oto-moni.com";
 // 送信先メールアドレス（管理者のアドレスなどを指定）
-const DESTINATION_EMAIL = "[EMAIL_ADDRESS]";
+const DESTINATION_EMAIL = "is0632vv@ed.ritsumei.ac.jp";
 
 export const handler = async (event) => {
     // CORS対応のヘッダー

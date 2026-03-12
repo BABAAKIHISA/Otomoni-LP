@@ -18,9 +18,9 @@ const Contact = () => {
 
       <div className="bg-white min-h-screen py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
@@ -35,7 +35,7 @@ const Contact = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Phone Contact */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -56,7 +56,7 @@ const Contact = () => {
             </motion.div>
 
             {/* Web Form Contact */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -66,9 +66,9 @@ const Contact = () => {
                 <Mail className="w-8 h-8 text-gray-900" />
               </div>
               <h2 className="font-japanese text-xl font-bold text-gray-900 mb-4">Webからのお問い合わせ</h2>
-              <a 
-                href="https://trust-coms.com/contact/" 
-                target="_blank" 
+              <a
+                href="https://trust-coms.com/contact/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-full"
               >
@@ -80,7 +80,7 @@ const Contact = () => {
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}

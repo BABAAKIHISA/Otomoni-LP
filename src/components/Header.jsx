@@ -10,9 +10,6 @@ const Header = ({ setIsCartOpen }) => {
 
   const navLinks = [
     // Shop link removed as requested
-    { path: '/', label: 'オトモニについて' },
-    { path: '/about', label: '開発チーム' },
-    { path: '/Faq', label: 'よくあるご質問' },
     { path: '/contact', label: 'お問い合わせ' },
   ];
 
