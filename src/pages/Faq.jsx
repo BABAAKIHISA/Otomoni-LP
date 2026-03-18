@@ -50,7 +50,7 @@ const Faq = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-white rounded-2xl shadow-sm p-6 sm:p-10"
         >
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="multiple" className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem value={`item-${index}`} key={index}>
                 <AccordionTrigger className="text-left text-base sm:text-lg font-japanese hover:no-underline text-gray-800">
