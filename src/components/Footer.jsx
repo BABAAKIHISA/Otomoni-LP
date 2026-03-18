@@ -37,10 +37,60 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* 右側: リンクなど（必要に応じて追加できます） */}
-          <div className="flex flex-col items-center md:items-end">
+          {/* 会社について */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left font-japanese mt-6 md:mt-0">
+            <h3 className="font-bold text-gray-900 text-lg mb-4">会社について</h3>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li>
+                <Link to="https://trust-coms.com/company/" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
+                  <span>会社概要</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="https://trust-coms.com/people/" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
+                  <span>社員紹介</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="https://trust-coms.com/recruit/" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
+                  <span>採用情報</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-            {/* 空にしておくか、SNSリンク等を置く想定 */}
+          {/* 中央: 事例紹介 */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left font-japanese mt-6 md:mt-0">
+            <h3 className="font-bold text-gray-900 text-lg mb-4">事例紹介</h3>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li>
+                <Link to="https://trust-coms.com/service/" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
+                  <span>事業案内</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="https://trust-coms.com/trust-note/case/" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
+                  <span>導入事例一覧</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* 右側: リンクメニュー */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left font-japanese mt-6 md:mt-0">
+            <h3 className="font-bold text-gray-900 text-lg mb-4">リンク</h3>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li>
+                <Link to="https://trust-coms.com" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
+                  <span>コーポレートサイト</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="https://trust-coms.com/trust-note/technical/" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
+                  <span>TRUSTテックブログ</span>
+                </Link>
+              </li>
+            </ul>
           </div>
 
         </div>
