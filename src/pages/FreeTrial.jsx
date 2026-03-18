@@ -98,12 +98,12 @@ const FreeTrial = () => {
           transition={{ duration: 0.6 }}
           className="bg-white rounded-2xl shadow-xl overflow-hidden"
         >
-          <div className="bg-orange-500 py-8 px-6 sm:px-10 text-center">
+          <div className="bg-gray-400 py-8 px-6 sm:px-10 text-center">
             <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2 font-japanese">
               {isSuccess ? '送信完了' : isConfirming ? '入力内容の確認' : '無料トライアルお申し込み'}
             </h1>
             {!isSuccess && !isConfirming && (
-              <p className="text-orange-50 text-sm sm:text-base font-japanese font-medium tracking-wide">
+              <p className="text-gray-50 text-sm sm:text-base font-japanese font-medium tracking-wide">
                 無料トライアルにおいて、<b>料金は一切発生しません</b>。<br />また、無料トライアル終了後、ご利用を強制することもございません。
               </p>
             )}

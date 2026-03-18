@@ -1,11 +1,32 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Mail, Phone, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    department: '',
+    email: '',
+    phone: '',
+    message: '',
+    agree: false
+  });
+
+  const [isConfirming, setIsConfirming] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }))
+  }
   return (
     <>
       <Helmet>
