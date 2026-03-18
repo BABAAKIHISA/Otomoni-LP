@@ -34,14 +34,14 @@ const FreeTrial = () => {
     setIsConfirming(true);
     // 状態更新後にスクロールさせるため、setTimeoutを使用
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById('freetrial-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 10);
   };
 
   const handleBack = () => {
     setIsConfirming(false);
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById('freetrial-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 10);
   };
 
@@ -59,7 +59,7 @@ const FreeTrial = () => {
         setTimeout(() => {
           setIsSending(false);
           setIsSuccess(true);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          document.getElementById('freetrial-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 1000);
         return;
       }
@@ -85,7 +85,7 @@ const FreeTrial = () => {
       alert('送信に失敗しました。時間をおいて再度お試しください。');
     } finally {
       setIsSending(false);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById('freetrial-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -93,10 +93,11 @@ const FreeTrial = () => {
     <div className="bg-gray-50 min-h-screen py-16 sm:py-24">
       <div className="container mx-auto px-4 max-w-3xl">
         <motion.div
+          id="freetrial-form"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-xl overflow-hidden"
+          className="bg-white rounded-2xl shadow-xl overflow-hidden scroll-mt-32"
         >
           <div className="bg-gray-400 py-8 px-6 sm:px-10 text-center">
             <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2 font-japanese">
