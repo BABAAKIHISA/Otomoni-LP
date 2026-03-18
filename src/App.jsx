@@ -13,6 +13,7 @@ import ShoppingCart from '@/components/ShoppingCart';
 import ScrollToTop from '@/components/ScrollToTop';
 import Faq from '@/pages/Faq';
 import FreeTrial from '@/pages/FreeTrial';
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -33,6 +34,7 @@ function App() {
           <Route path="/success" element={<Success />} />
           <Route path="/shipping-policy" element={<ShippingPolicy />} />
           <Route path="/returns-policy" element={<ReturnsPolicy />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </main>
       <Footer />

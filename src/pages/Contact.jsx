@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Mail, Phone, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -334,8 +335,9 @@ const Contact = () => {
                       </div>
                       <div className="ml-3 text-sm">
                         <label htmlFor="agree" className="font-medium text-gray-700 font-japanese cursor-pointer">
-                          <a href="#" className="text-blue-600 hover:text-blue-800 underline decoration-blue-300 underline-offset-2">個人情報保護方針</a>に同意する
+                          <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline decoration-blue-300 underline-offset-2">個人情報保護方針</Link>に同意する
                         </label>
+                        <p className="text-gray-500 mt-1 font-japanese text-xs">送信前に内容をご確認の上、チェックを入れてください。</p>
                       </div>
                     </div>
                   </div>
