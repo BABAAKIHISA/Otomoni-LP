@@ -60,7 +60,7 @@ const Contact = () => {
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, type: 'contact' }),
       });
       const result = await response.json();
       if (result.success || response.ok) {
