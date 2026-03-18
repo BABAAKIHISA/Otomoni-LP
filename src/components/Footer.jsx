@@ -24,8 +24,8 @@ const Footer = () => {
 
           {/* 左側: ロゴと会社情報 */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left font-japanese">
-            <Link to="/" className="flex items-center gap-2 mb-4 hover:opacity-80 transition-opacity">
-              <img src="/trust-logo.png" alt="株式会社トラストロゴ" className="h-10 w-auto" />
+            <Link to="/" className="flex items-center gap-2 mb-2 hover:opacity-80 transition-opacity">
+              <img src="/trust_logo.png" alt="株式会社トラストロゴ" className="h-20 w-auto" />
             </Link>
             <p className="font-bold text-gray-900 text-lg mb-2">株式会社トラスト</p>
             <div className="text-sm text-gray-600 space-y-1">
