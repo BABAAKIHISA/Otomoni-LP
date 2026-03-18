@@ -70,7 +70,7 @@ const FreeTrial = () => {
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, type: 'freetrial' }),
       });
 
       const result = await response.json();
