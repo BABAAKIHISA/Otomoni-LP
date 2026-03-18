@@ -50,7 +50,7 @@ const Contact = () => {
         setTimeout(() => {
           setIsSending(false);
           setIsSuccess(true);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 1000);
         return;
       }
@@ -73,7 +73,7 @@ const Contact = () => {
       alert('送信に失敗しました。時間をおいて再度お試しください。');
     } finally {
       setIsSending(false);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -248,7 +248,7 @@ const Contact = () => {
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors bg-gray-50 focus:bg-white text-gray-900"
-                      placeholder="株式会社オトモニ"
+                      placeholder="株式会社トラスト"
                     />
                   </div>
 
