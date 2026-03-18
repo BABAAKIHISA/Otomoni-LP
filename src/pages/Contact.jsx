@@ -33,50 +33,36 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex justify-center w-full px-2 sm:px-0">
             {/* Phone Contact */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-gray-50 rounded-2xl p-10 flex flex-col items-center justify-center text-center border border-gray-100 shadow-sm"
+              className="mx-auto w-full max-w-lg bg-gray-50 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center text-center sm:text-left border border-gray-100 shadow-sm gap-6 sm:gap-8"
             >
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
                 <Phone className="w-8 h-8 text-gray-900" />
               </div>
-              <h2 className="font-japanese text-xl font-bold text-gray-900 mb-2">お電話でのお問い合わせ</h2>
-              <div className="mt-4">
-                <p className="font-japanese text-2xl sm:text-3xl font-bold text-gray-900 tracking-wider">
-                  TEL. 0258-81-0150
-                </p>
-                <p className="font-japanese text-sm text-gray-600 mt-2">
-                  (受付時間　09:00〜18:00)
-                </p>
+              <div>
+                <h2 className="font-japanese text-xl font-bold text-gray-900 mb-2">お電話でのお問い合わせ</h2>
+                <div className="mt-2">
+                  <p className="font-japanese text-2xl sm:text-3xl font-bold text-gray-900 tracking-wider">
+                    TEL. 0258-81-0150
+                  </p>
+                  <p className="font-japanese text-sm text-gray-600 mt-2">
+                    (受付時間　09:00〜18:00)
+                  </p>
+                </div>
               </div>
             </motion.div>
 
-            {/* Web Form Contact */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-gray-50 rounded-2xl p-10 flex flex-col items-center justify-center text-center border border-gray-100 shadow-sm"
-            >
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
-                <Mail className="w-8 h-8 text-gray-900" />
-              </div>
-              <h2 className="font-japanese text-xl font-bold text-gray-900 mb-4">Webからのお問い合わせ</h2>
-              <a
-                href="https://trust-coms.com/contact/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full"
-              >
-                <Button className="w-full font-japanese bg-gray-900 text-white hover:bg-gray-800 py-6 text-base rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center whitespace-nowrap">
-                  お問い合わせフォームへ
-                  <ExternalLink className="ml-2 w-4 h-4" />
-                </Button>
-              </a>
+          </div>
+
+          <div>
+            <motion.div>
+
+
             </motion.div>
           </div>
 

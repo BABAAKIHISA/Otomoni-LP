@@ -356,7 +356,7 @@ const ClosingSection = () => {
           <p className="font-japanese mt-4 text-base sm:text-lg text-gray-600">
             その他、ご不明な点などございましたら、お気軽にお問い合わせください。<br />
             <Link to="/contact">
-              <Button className="font-japanese mt-4 bg-gray-500 text-white hover:bg-gray-600 rounded-full px-8 py-6 text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+              <Button className="font-japanese mt-4 bg-gray-400 text-white hover:bg-gray-600 rounded-full px-8 py-6 text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                 お問い合わせはこちら
               </Button>
             </Link>
@@ -435,7 +435,7 @@ const FaqSection = () => {
           className="mt-12 text-center"
         >
           <Link to="/Faq">
-            <Button className="font-japanese bg-gray-500 text-white hover:bg-gray-600 rounded-full px-8 py-6 sm:px-10 sm:py-7 text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+            <Button className="font-japanese bg-gray-400 text-white hover:bg-gray-600 rounded-full px-8 py-6 sm:px-10 sm:py-7 text-base sm:text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
               その他ご質問はこちら
             </Button>
           </Link>

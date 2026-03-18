@@ -6,7 +6,7 @@ const sesClient = new SESClient({ region: "ap-southeast-2" });
 // 送信元メールアドレス（SES検証済みである必要があります）
 const SOURCE_EMAIL = "no-reply@oto-moni.com";
 // 送信先メールアドレス（管理者のアドレスなどを指定）
-const DESTINATION_EMAIL = "is0632vv@ed.ritsumei.ac.jp";
+const DESTINATION_EMAIL = "inquiry_dx@trust-coms.com";
 
 export const handler = async (event) => {
     console.log("=== LAMBDA FUNCTION INVOKED ===");
@@ -38,11 +38,11 @@ export const handler = async (event) => {
             console.log("event.body exists. Parsing JSON...");
             // Base64エンコードされているかチェック (REST APIでありがち)
             if (event.isBase64Encoded) {
-                 console.log("Decoding base64 body...");
-                 const decodedBody = Buffer.from(event.body, 'base64').toString('utf8');
-                 body = JSON.parse(decodedBody);
+                console.log("Decoding base64 body...");
+                const decodedBody = Buffer.from(event.body, 'base64').toString('utf8');
+                body = JSON.parse(decodedBody);
             } else {
-                 body = JSON.parse(event.body);
+                body = JSON.parse(event.body);
             }
         } else {
             console.log("No event.body. Using raw event as body (could be direct invocation).");
@@ -94,7 +94,7 @@ ${message || '特になし'}
             },
             Message: {
                 Subject: {
-                    Data: `【無料トライアル申込み】${company} ${name}様より`,
+                    Data: `※テスト送信※【無料トライアル申込み】${company} ${name}様より`,
                     Charset: "UTF-8",
                 },
                 Body: {
@@ -123,7 +123,7 @@ ${message || '特になし'}
     } catch (error) {
         console.error("=== ERROR OCCURRED ===");
         console.error("Error sending email:", error);
-        
+
         return {
             statusCode: 500,
             headers: corsHeaders,
