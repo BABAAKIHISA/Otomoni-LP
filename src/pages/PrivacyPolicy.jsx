@@ -24,47 +24,66 @@ const PrivacyPolicy = () => {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <h1 className="font-japanese text-3xl sm:text-4xl font-medium tracking-tight text-gray-900 mb-10 text-center border-b pb-4">
-              個人情報保護方針
+            <h1 className="font-japanese text-2xl sm:text-2xl font-medium tracking-tight text-gray-900 mb-10 text-center border-b pb-4">
+              個人情報に関する取扱いについて（個人情報保護方針）
             </h1>
 
             <div className="prose prose-gray max-w-none font-japanese space-y-6 text-gray-700">
               <p>
-                株式会社トラスト（以下「当社」）は、以下のとおり個人情報保護方針を定め、個人情報保護の仕組みを構築し、全従業員に個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を推進致します。
+                株式会社トラスト（以下、「当社」という）は、コンピュータシステムの提案・設計・開発・運用業務を提供しており、お客様および当社に関わる方すべての個人情報について、適切に取り扱うことが社会的責務として重要と考え、以下の方針に基づき、個人情報の保護に努めます。
               </p>
 
-              <h3 className="text-xl font-bold mt-8 mb-4">■ 個人情報の管理</h3>
-              <p>
-                当社は、お客さまの個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、セキュリティシステムの維持・管理体制の整備・社員教育の徹底等の必要な措置を講じ、安全対策を実施し個人情報の厳重な管理を行ないます。
-              </p>
+              <div className="space-y-8 pt-4">
+                <div className="flex items-start">
+                  <span className="text-xl font-bold mr-3 text-gray-800 shrink-0 flex items-center h-7">①</span>
+                  <div className="leading-relaxed">
+                    当社は、個人情報保護方針を役員及び従業員に対して周知、徹底するとともに、個人情報の重要性について継続的に教育を行い、個人情報の適切な管理に努めます。
+                  </div>
+                </div>
 
-              <h3 className="text-xl font-bold mt-8 mb-4">■ 個人情報の利用目的</h3>
-              <p>
-                お客さまからお預かりした個人情報は、当社からのご連絡や業務のご案内やご質問に対する回答として、電子メールや資料のご送付に利用いたします。
-              </p>
+                <div className="flex items-start">
+                  <span className="text-xl font-bold mr-3 text-gray-800 shrink-0 flex items-center h-7">②</span>
+                  <div className="leading-relaxed">
+                    当社は、個人情報を取得する場合は、業務上必要な範囲で、ご本人に利用目的を明示し、同意頂いた上で取得します。
+                  </div>
+                </div>
 
-              <h3 className="text-xl font-bold mt-8 mb-4">■ 個人情報の第三者への開示・提供の禁止</h3>
-              <p>
-                当社は、お客さまよりお預かりした個人情報を適切に管理し、次のいずれかに該当する場合を除き、個人情報を第三者に開示いたしません。<br />
-                ・お客さまの同意がある場合<br />
-                ・お客さまが希望されるサービスを行なうために当社が業務を委託する業者に対して開示する場合<br />
-                ・法令に基づき開示することが必要である場合
-              </p>
+                <div className="flex items-start">
+                  <span className="text-xl font-bold mr-3 text-gray-800 shrink-0 flex items-center h-7">③</span>
+                  <div className="leading-relaxed">
+                    当社は、取得した個人情報は、ご本人に同意頂いた範囲内で利用し、目的外利用は致しません。また、法令に基づく場合を除いて、ご本人の同意を得ることなく第三者に提供および開示することはありません。
+                  </div>
+                </div>
 
-              <h3 className="text-xl font-bold mt-8 mb-4">■ 個人情報の安全対策</h3>
-              <p>
-                当社は、個人情報の正確性及び安全性確保のために、セキュリティに万全の対策を講じています。
-              </p>
+                <div className="flex items-start">
+                  <span className="text-xl font-bold mr-3 text-gray-800 shrink-0 flex items-center h-7">④</span>
+                  <div className="leading-relaxed">
+                    当社は、個人情報の取扱に関して、個人情報の保護に関する法令、国が定める指針およびその他の規範を遵守するために、日本工業規格「個人情報保護マネジメントシステム－要求事項」に準拠した個人情報マネジメントシステムを策定し、適切に運用致します。
+                  </div>
+                </div>
 
-              <h3 className="text-xl font-bold mt-8 mb-4">■ ご本人の照会</h3>
-              <p>
-                お客さまがご本人の個人情報の照会・修正・削除などをご希望される場合には、ご本人であることを確認の上、対応させていただきます。
-              </p>
+                <div className="flex items-start">
+                  <span className="text-xl font-bold mr-3 text-gray-800 shrink-0 flex items-center h-7">⑤</span>
+                  <div className="leading-relaxed">
+                    当社は、個人情報の漏えい、滅失又はき損などのリスクに対し、予防対策および是正措置を講じます。
+                  </div>
+                </div>
 
-              <h3 className="text-xl font-bold mt-8 mb-4">■ 法令、規範の遵守と見直し</h3>
-              <p>
-                当社は、保有する個人情報に関して適用される日本の法令、その他規範を遵守するとともに、本ポリシーの内容を適宜見直し、その改善に努めます。
-              </p>
+                <div className="flex items-start">
+                  <span className="text-xl font-bold mr-3 text-gray-800 shrink-0 flex items-center h-7">⑥</span>
+                  <div className="leading-relaxed">
+                    当社は、ご本人からの当該個人情報の開示、訂正、削除、利用停止等の要請および苦情や相談に対して速やかに対応致します。
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <span className="text-xl font-bold mr-3 text-gray-800 shrink-0 flex items-center h-7">⑦</span>
+                  <div className="leading-relaxed">
+                    当社は個人情報保護マネジメントシステムを継続的に見直し改善致します。
+                  </div>
+                </div>
+                <p>制定日：2011年3月</p>
+              </div>
             </div>
 
             <div className="mt-16 text-center pt-8 border-t border-gray-100">
