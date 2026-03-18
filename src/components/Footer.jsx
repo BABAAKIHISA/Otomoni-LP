@@ -31,11 +31,15 @@ const Footer = () => {
             <div className="text-sm text-gray-600 space-y-1">
               <p>〒947-0004 新潟県小千谷市東栄1丁目1番15号</p>
               <p>TEL. 0258-81-0150</p>
+              <p>当社HP.
+                <Link to="https://trust-coms.com" className="text-blue-600 text-sm ml-2 mb-2 hover:opacity-80 transition-opacity underline">https://trust-coms.com</Link>
+              </p>
             </div>
           </div>
 
           {/* 右側: リンクなど（必要に応じて追加できます） */}
           <div className="flex flex-col items-center md:items-end">
+
             {/* 空にしておくか、SNSリンク等を置く想定 */}
           </div>
 
