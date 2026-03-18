@@ -39,7 +39,7 @@ const Footer = () => {
 
           {/* 会社について */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left font-japanese mt-6 md:mt-0">
-            <h3 className="font-bold text-gray-900 text-lg mb-4">会社について</h3>
+            <h3 className="font-bold text-gray-900 text-lg mb-4">トラストについて</h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li>
                 <Link to="https://trust-coms.com/company/" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
@@ -78,13 +78,8 @@ const Footer = () => {
 
           {/* 右側: リンクメニュー */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left font-japanese mt-6 md:mt-0">
-            <h3 className="font-bold text-gray-900 text-lg mb-4">リンク</h3>
+            <h3 className="font-bold text-gray-900 text-lg mb-4">その他関連サイト</h3>
             <ul className="space-y-3 text-sm text-gray-600">
-              <li>
-                <Link to="https://trust-coms.com" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
-                  <span>コーポレートサイト</span>
-                </Link>
-              </li>
               <li>
                 <Link to="https://trust-coms.com/trust-note/technical/" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
                   <span>TRUSTテックブログ</span>
