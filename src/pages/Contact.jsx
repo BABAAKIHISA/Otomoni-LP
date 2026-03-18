@@ -31,13 +31,13 @@ const Contact = () => {
     e.preventDefault();
     setIsConfirming(true);
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 10);
   };
   const handleBack = () => {
     setIsConfirming(false);
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 10);
   };
 
@@ -132,10 +132,11 @@ const Contact = () => {
 
           {/* メールフォーム部分 */}
           <motion.div
+            id="contact-form"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+            className="mt-12 bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden scroll-mt-32"
           >
             <div className="bg-gray-400 py-6 px-6 sm:px-10 text-center">
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 font-japanese flex items-center justify-center gap-2">
@@ -158,7 +159,7 @@ const Contact = () => {
                   </p>
                   <div className="pt-6">
                     <button onClick={() => window.location.reload()} className="inline-block bg-orange-500 text-white px-8 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors">
-                      もう一度お問い合わせする
+                      お問い合わせ画面に戻る
                     </button>
                   </div>
                 </div>
