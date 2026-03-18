@@ -2,6 +2,34 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
+const renderAnswer = (text) => {
+  const bulletCount = (text.match(/^・/gm) || []).length;
+
+  if (bulletCount <= 1) {
+    return <div className="whitespace-pre-wrap">{text.replace(/^・/gm, '')}</div>;
+  }
+
+  const lines = text.split('\n');
+  return (
+    <div className="space-y-1">
+      {lines.map((line, idx) => {
+        if (line.startsWith('・')) {
+          return (
+            <div key={idx} className="flex items-start">
+              <span className="mr-1 shrink-0">・</span>
+              <div className="flex-1 leading-relaxed">{line.substring(1)}</div>
+            </div>
+          );
+        }
+        if (line.trim() === '') {
+          return <div key={idx} className="h-2"></div>;
+        }
+        return <div key={idx} className="leading-relaxed">{line}</div>;
+      })}
+    </div>
+  );
+};
+
 const Faq = () => {
   const faqCategories = [
     {
@@ -126,7 +154,7 @@ const Faq = () => {
     },
     {
       question: "すぐに使えますか？初期設定とトレーニング時間は？",
-      answer: "・最短3日で使えます\n※最短3日と答えていいが、実際は1週間くらいかかりそう。録音と学習含め。"
+      answer: "・最短3日で使えます"
     },
     {
       question: "複数ラインへ横展開する際の工数と期間は？",
@@ -204,7 +232,7 @@ const Faq = () => {
                       <AccordionContent className="font-japanese text-base text-gray-600 leading-relaxed pt-2 pb-6 pl-8">
                         <div className="flex">
                           <span className="text-gray-400 font-bold mr-3 shrink-0">A.</span>
-                          <div className="flex-1 whitespace-pre-wrap">{faq.answer}</div>
+                          <div className="flex-1">{renderAnswer(faq.answer)}</div>
                         </div>
                       </AccordionContent>
                     </AccordionItem>
@@ -238,7 +266,7 @@ const Faq = () => {
                   <AccordionContent className="font-japanese text-base text-gray-600 leading-relaxed pt-2 pb-6 pl-8">
                     <div className="flex">
                       <span className="text-gray-400 font-bold mr-3 shrink-0">A.</span>
-                      <div className="flex-1 whitespace-pre-wrap">{faq.answer}</div>
+                      <div className="flex-1">{renderAnswer(faq.answer)}</div>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
