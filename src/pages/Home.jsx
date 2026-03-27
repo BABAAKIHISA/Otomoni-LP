@@ -348,16 +348,8 @@ const ClosingSection = () => {
             無料トライアルをご用意しております。<br />
             料金は一切かかりません。トライアル終了後にご利用を強制することもありません。<br />
             <Link to="/FreeTrial">
-              <Button className="font-japanese mt-4 mb-4 bg-orange-500 text-white hover:bg-orange-600 rounded-full px-8 py-6 text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+              <Button className="font-japanese mt-4 mb-2 bg-orange-500 text-white hover:bg-orange-600 rounded-full px-8 py-6 text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                 無料トライアルはこちら
-              </Button>
-            </Link>
-          </p>
-          <p className="font-japanese mt-4 text-base sm:text-lg text-gray-600">
-            その他、ご不明な点などございましたら、お気軽にお問い合わせください。<br />
-            <Link to="/contact">
-              <Button className="font-japanese mt-4 bg-gray-400 text-white hover:bg-gray-600 rounded-full px-8 py-6 text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                お問い合わせはこちら
               </Button>
             </Link>
           </p>

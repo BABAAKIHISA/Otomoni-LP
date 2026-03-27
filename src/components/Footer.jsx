@@ -24,9 +24,9 @@ const Footer = () => {
 
           {/* 左側: ロゴと会社情報 */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left font-japanese">
-            <Link to="/" className="flex items-center gap-2 mb-2 hover:opacity-80 transition-opacity">
+            {/*<Link to="/" className="flex items-center gap-2 mb-2 hover:opacity-80 transition-opacity">
               <img src="/trust_logo.png" alt="株式会社トラストロゴ" className="h-20 w-auto" />
-            </Link>
+            </Link>*/}
             <p className="font-bold text-gray-900 text-lg mb-2">株式会社トラスト</p>
             <div className="text-sm text-gray-600 space-y-1">
               <p>〒947-0004 新潟県小千谷市東栄1丁目1番15号</p>
@@ -63,11 +63,6 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start text-center md:text-left font-japanese mt-6 md:mt-0">
             <h3 className="font-bold text-gray-900 text-lg mb-4">事例紹介</h3>
             <ul className="space-y-3 text-sm text-gray-600">
-              <li>
-                <Link to="https://trust-coms.com/service/" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
-                  <span>事業案内</span>
-                </Link>
-              </li>
               <li>
                 <Link to="https://trust-coms.com/trust-note/case/" className="hover:text-blue-600 hover:underline transition-colors flex items-center gap-2">
                   <span>導入事例一覧</span>
